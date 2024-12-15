@@ -24,3 +24,24 @@ export async function getScheduledMatches({
     throw error;
   }
 }
+
+export async function getLiveMatches({
+  league_code,
+  limit,
+}: ScheduledMatchesProps): Promise<Match[]> {
+  try {
+    const response = await apiClient.get(
+      `/competitions/${league_code}/matches`,
+      {
+        params: { status: "LIVE" },
+      }
+    );
+
+    const matches = response.data.matches;
+
+    return limit ? matches.slice(0, limit) : matches;
+  } catch (error) {
+    console.error("Erro ao buscar jogos agendados:", error);
+    throw error;
+  }
+}
