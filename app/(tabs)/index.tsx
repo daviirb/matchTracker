@@ -1,4 +1,5 @@
 import { Leagues } from "@/components/Leagues";
+import { LiveSession } from "@/components/live-session/LiveSession";
 import { MatcheSession } from "@/components/matches-session/MatcheSession";
 import { Container } from "@/components/ui/Base";
 import { useLeagueStore } from "@/stores/leagues";
@@ -9,6 +10,7 @@ export default function HomeScreen() {
   return (
     <Container>
       <Leagues />
+      <LiveSession selectedLeague={league} />
       <View className="flex-1">
         <MatcheSession selectedLeague={league} />
       </View>

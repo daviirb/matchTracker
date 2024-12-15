@@ -1,3 +1,4 @@
+import { color } from "@/constants/Colors";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Tabs } from "expo-router";
@@ -12,7 +13,11 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "#22c55e" }}>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: color.primary,
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -24,7 +29,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="standings"
         options={{
           title: "Standings",
           headerShown: false,
