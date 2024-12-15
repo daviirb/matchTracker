@@ -1,27 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Leagues } from "@/components/Leagues";
+import { StandingSession } from "@/components/standings/StandingSession";
+import { Container } from "@/components/ui/Base";
+import { useLeagueStore } from "@/stores/leagues";
+import { View } from "react-native";
 
-export default function TabTwoScreen() {
+export default function HomeScreen() {
+  const league = useLeagueStore((state) => state.league);
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} />
-    </View>
+    <Container>
+      <Leagues />
+      <View className="flex-1">
+        <StandingSession selectedLeague={league} />
+      </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});
