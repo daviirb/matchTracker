@@ -22,7 +22,6 @@ export async function getScheduledMatches({
 
     return limit ? matches.slice(0, limit) : matches;
   } catch (error) {
-    console.error("Erro ao buscar jogos agendados:", error);
     throw error;
   }
 }
@@ -43,7 +42,6 @@ export async function getLiveMatches({
 
     return limit ? matches.slice(0, limit) : matches;
   } catch (error) {
-    console.error("Erro ao buscar jogos agendados:", error);
     throw error;
   }
 }
@@ -65,7 +63,6 @@ export async function getFinishedMatches({
 
     return limit ? matches.slice(0, limit) : matches;
   } catch (error) {
-    console.error("Erro ao buscar jogos agendados:", error);
     throw error;
   }
 }
@@ -85,7 +82,6 @@ export async function getStandings({
 
     return limit ? standings.slice(0, limit) : standings;
   } catch (error) {
-    console.error("Erro ao buscar jogos agendados:", error);
     throw error;
   }
 }
@@ -104,12 +100,11 @@ export async function getTable({
     const standingsTable = response.data.standings[0]?.table;
 
     if (!standingsTable) {
-      throw new Error("Tabela de classificações não encontrada");
+      throw new Error("Not Found");
     }
 
     return limit ? standingsTable.slice(0, limit) : standingsTable;
   } catch (error) {
-    console.error("Erro ao buscar jogos agendados:", error);
     throw error;
   }
 }
@@ -127,11 +122,8 @@ export async function getCompetitionData({
     );
 
     const competitionData = response.data;
-    console.log(competitionData);
-
     return limit ? [competitionData].slice(0, limit) : [competitionData];
   } catch (error) {
-    console.error("Erro ao buscar dados da competição:", error);
     throw error;
   }
 }

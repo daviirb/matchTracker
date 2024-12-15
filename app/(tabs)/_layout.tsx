@@ -42,7 +42,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="standings"
         options={{
-          title: "Standings",
+          title: "Table",
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="podium" color={color} size={28} />

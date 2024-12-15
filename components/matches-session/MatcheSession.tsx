@@ -38,7 +38,7 @@ export function MatcheSession({ selectedLeague }: MatcheSessionProps) {
 
   return (
     <View className={platform === "android" ? "flex-1" : ""}>
-      <Session title="Matches" link="/sd" />
+      <Session title="Matches" text="Next 20 matches" />
       <FlatList
         className="p-2"
         data={matches}
