@@ -16,6 +16,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: color.primary,
+        tabBarInactiveTintColor: color.terciary,
       }}
     >
       <Tabs.Screen
@@ -25,6 +26,16 @@ export default function TabLayout() {
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <TabBarIcon name="soccer-ball-o" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="finished"
+        options={{
+          title: "Finished",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="whistle" color={color} size={28} />
           ),
         }}
       />
