@@ -21,21 +21,25 @@ export function Leagues() {
   };
   return (
     <View className="px-4 mb-4">
-      <ScrollView horizontal className="gap-2">
+      <ScrollView
+        horizontal
+        className="gap-2"
+        showsHorizontalScrollIndicator={false}
+      >
         {LEAGUES.map((league, idx) => (
           <TouchableOpacity
             key={idx}
             onPress={() => handleSelect(league.code)}
-            className={`flex-row items-center p-2  ${
+            className={`flex-row items-center  ${
               isSelected && selectLeague === league.code
                 ? "border-b-2 border-primary"
                 : ""
             }`}
           >
             <Image
-              src={`https://crests.football-data.org/${league.code}.png`}
+              src={`https://crests.football-data.org/${league.image}.png`}
               resizeMode="contain"
-              className="w-12 h-12"
+              className="w-14 h-14 p-1"
             />
           </TouchableOpacity>
         ))}
