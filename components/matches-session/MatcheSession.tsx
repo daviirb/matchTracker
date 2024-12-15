@@ -1,3 +1,4 @@
+import { color } from "@/constants/Colors";
 import { getScheduledMatches } from "@/services/apiData";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Platform, View } from "react-native";
@@ -11,7 +12,6 @@ type MatcheSessionProps = {
 export function MatcheSession({ selectedLeague }: MatcheSessionProps) {
   const [matches, setMatches] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
-  const [seeMore, setSeeMore] = useState(false);
 
   const platform = Platform.OS;
   const limit = 20;
@@ -34,7 +34,7 @@ export function MatcheSession({ selectedLeague }: MatcheSessionProps) {
     };
 
     getData();
-  }, [selectedLeague, limit]);
+  }, [selectedLeague]);
 
   return (
     <View className={platform === "android" ? "flex-1" : ""}>
@@ -49,7 +49,7 @@ export function MatcheSession({ selectedLeague }: MatcheSessionProps) {
         ListFooterComponent={
           loading ? (
             <View className="items-center p-4">
-              <ActivityIndicator size="large" color="#22c55e" />
+              <ActivityIndicator size="large" color={color.primary} />
             </View>
           ) : null
         }
