@@ -7,12 +7,12 @@ type SessionProps = {
 };
 export function Session({ link, title }: SessionProps) {
   return (
-    <View className="px-4">
+    <View className="px-2">
       <View className="flex-row items-center justify-between">
-        <Title>{title}</Title>
+        <Title className="text-gray">{title}</Title>
         {link ? (
           <TouchableOpacity>
-            <Text className="text-green-500 font-bold">See all</Text>
+            <Text className="text-primary font-bold">See all</Text>
           </TouchableOpacity>
         ) : null}
       </View>

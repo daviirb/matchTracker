@@ -14,9 +14,9 @@ export const SafeAreaContainer = forwardRef<View, ViewProps>(
     return (
       <View
         {...props}
-        style={[{ paddingTop: top }, style]}
+        style={[{ paddingTop: top, backgroundColor: "#f8f8f8" }, style]}
         ref={ref}
-        className="flex-1 bg-gray-100"
+        className="flex-1"
       >
         {children}
       </View>

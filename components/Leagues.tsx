@@ -20,16 +20,16 @@ export function Leagues() {
     setLeague(value);
   };
   return (
-    <View className="p-4">
+    <View className="px-4 mb-4">
       <ScrollView horizontal className="gap-2">
         {LEAGUES.map((league, idx) => (
           <TouchableOpacity
             key={idx}
             onPress={() => handleSelect(league.code)}
-            className={`flex-row items-center p-2 rounded-lg ${
+            className={`flex-row items-center p-2  ${
               isSelected && selectLeague === league.code
-                ? "bg-green-300"
-                : "bg-white"
+                ? "border-b-2 border-primary"
+                : ""
             }`}
           >
             <Image

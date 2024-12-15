@@ -1,7 +1,16 @@
 type Match = {
   id: number;
   utcDate: string;
-  status: string;
+  status:
+    | "SCHEDULED"
+    | "LIVE"
+    | "IN_PLAY"
+    | "PAUSED"
+    | "FINISHED"
+    | "POSTPONED"
+    | "SUSPENDED"
+    | "CANCELLED"
+    | "TIMED";
   competition: {
     code: string;
     name: string;
